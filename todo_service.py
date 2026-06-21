@@ -39,8 +39,8 @@ def complete_todo(todo_id):
 
 def get_pending():
     """Return todos that are NOT yet done, highest priority first."""
-    pending = [t for t in _todos if t["done"]]
-    return sorted(pending, key=lambda t: t["priority"], reverse=True)
+    pending = [t for t in _todos if not t["done"]]
+    return sorted(pending, key=lambda t: t["priority"])
 
 
 def summary():
